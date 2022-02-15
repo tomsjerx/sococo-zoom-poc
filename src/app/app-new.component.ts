@@ -12,13 +12,13 @@ import ZoomMtgEmbedded from '@zoomus/websdk/embedded';
 export class AppComponent implements OnInit {
 
   // setup your signature endpoint here: https://github.com/zoom/meetingsdk-sample-signature-node.js
-  signatureEndpoint = ''
-  apiKey = ''
-  meetingNumber = '123456789'
+  signatureEndpoint = 'https://sococo-zoom-poc-signature.herokuapp.com/'
+  apiKey = '3cCmxaXkRwGCgZbVdINBQg'
+  meetingNumber = '2834077526'
   role = 0
-  userName = 'Angular'
-  userEmail = ''
-  passWord = ''
+  userName = 'tomsjerx'
+  userEmail = 'contact@tomsjer.com'
+  passWord = 'p93UHF'
   // pass in the registrant's token if your meeting or webinar requires registration. More info here:
   // Meetings: https://marketplace.zoom.us/docs/sdk/native-sdks/web/component-view/meetings#join-registered
   // Webinars: https://marketplace.zoom.us/docs/sdk/native-sdks/web/component-view/webinars#join-registered
@@ -56,10 +56,10 @@ export class AppComponent implements OnInit {
 
   getSignature() {
     this.httpClient.post(this.signatureEndpoint, {
-	    meetingNumber: this.meetingNumber,
-	    role: this.role
+      meetingNumber: this.meetingNumber,
+      role: this.role
     }).toPromise().then((data: any) => {
-      if(data.signature) {
+      if (data.signature) {
         console.log(data.signature)
         this.startMeeting(data.signature)
       } else {
@@ -73,11 +73,11 @@ export class AppComponent implements OnInit {
   startMeeting(signature) {
 
     this.client.join({
-    	apiKey: this.apiKey,
-    	signature: signature,
-    	meetingNumber: this.meetingNumber,
-    	password: this.passWord,
-    	userName: this.userName,
+      apiKey: this.apiKey,
+      signature: signature,
+      meetingNumber: this.meetingNumber,
+      password: this.passWord,
+      userName: this.userName,
       userEmail: this.userEmail,
       tk: this.registrantToken
     })

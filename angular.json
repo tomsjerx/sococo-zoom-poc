@@ -28,10 +28,8 @@
               "node_modules/@zoomus/websdk/dist/css/react-select.css",
               "src/styles.css"
             ],
-            "scripts": [
-            ],
-            "allowedCommonJsDependencies": [
-            ]
+            "scripts": [],
+            "allowedCommonJsDependencies": []
           },
           "configurations": {
             "production": {
@@ -41,7 +39,7 @@
                   "with": "src/environments/environment.prod.ts"
                 }
               ],
-              "baseHref": "/",
+              "baseHref": "/sococo-zoom-poc/",
               "optimization": true,
               "outputHashing": "all",
               "sourceMap": false,
@@ -124,6 +122,7 @@
           }
         }
       }
-    }},
+    }
+  },
   "defaultProject": "meetingsdk-sample-angular"
 }
