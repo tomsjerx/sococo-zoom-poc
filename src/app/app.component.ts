@@ -40,13 +40,14 @@ export class AppComponent implements OnInit {
   ngOnInit() {
 
   }
+  handleChange(e) { }
 
   getSignature() {
     this.httpClient.post(this.signatureEndpoint, {
-	    meetingNumber: this.meetingNumber,
-	    role: this.role
+      meetingNumber: this.meetingNumber,
+      role: this.role
     }).toPromise().then((data: any) => {
-      if(data.signature) {
+      if (data.signature) {
         console.log(data.signature)
         this.startMeeting(data.signature)
       } else {

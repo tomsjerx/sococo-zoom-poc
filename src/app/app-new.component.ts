@@ -14,11 +14,11 @@ export class AppComponent implements OnInit {
   // setup your signature endpoint here: https://github.com/zoom/meetingsdk-sample-signature-node.js
   signatureEndpoint = 'https://sococo-zoom-poc-signature.herokuapp.com/'
   apiKey = '3cCmxaXkRwGCgZbVdINBQg'
-  meetingNumber = '2834077526'
+  meetingNumber = ''
   role = 0
-  userName = 'tomsjerx'
-  userEmail = 'contact@tomsjer.com'
-  passWord = 'p93UHF'
+  userName = ''
+  userEmail = ''
+  passWord = ''
   // pass in the registrant's token if your meeting or webinar requires registration. More info here:
   // Meetings: https://marketplace.zoom.us/docs/sdk/native-sdks/web/component-view/meetings#join-registered
   // Webinars: https://marketplace.zoom.us/docs/sdk/native-sdks/web/component-view/webinars#join-registered
@@ -52,6 +52,16 @@ export class AppComponent implements OnInit {
         }
       }
     });
+  }
+
+  handleChange(e) {
+    const key = e.target.name;
+    const value = e.target.value;
+    if (key in this) {
+      this[key] = value;
+    } else {
+      console.error(`${key} not found on this`)
+    }
   }
 
   getSignature() {

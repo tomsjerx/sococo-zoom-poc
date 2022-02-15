@@ -1,11 +1,17 @@
 <main>
   <h1>Zoom Meeting SDK Sample Angular</h1>
-
   <!-- For Component View -->
   <div id="meetingSDKElement">
     <!-- Zoom Meeting SDK Component View Rendered Here -->
   </div>
 
-
+  <input name="meetingNumber" type="text" placeholder="Meeting ID" (change)="handleChange($event)">
+  <br>
+  <input name="userName" type="text" placeholder="Name" (change)="handleChange($event)">
+  <br>
+  <input name="userEmail" type="text" placeholder="Email" (change)="handleChange($event)">
+  <br>
+  <input name="passWord" type="text" placeholder="Password" (change)="handleChange($event)">
+  <br>
   <button (click)="getSignature()">Join Meeting</button>
 </main>
